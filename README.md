@@ -2,38 +2,69 @@
 
 **[View the style guide →](https://claude.ai/artifact/KzLNjss2QJZVFs2J7JT5oc)**
 — a browsable page with the logo variants, color swatches, and type specimens
-below, instead of reading the raw files.
+below, instead of reading the raw files. (Published version; may lag the
+latest commit here — this repo is the source of truth.)
 
 Single source of truth for the Heydru brand: logo assets, color palette, and
 typography. Pulled directly from the source Figma file (`final HEYDRU 2021
-(Copy)`, Branding page) so every product/site can reuse the same values
+(Copy)`, **BRANDBOOK** page) so every product/site can reuse the same values
 instead of re-deriving them.
 
-## Logo
+## Logo system
 
-`svg/` — the "Q" speech-bubble icon mark plus the full "heydru!" lockup.
+The source file names three distinct assets — use its own terms, not generic
+ones:
 
-| File | Use |
-|---|---|
-| `icon-mark-red.svg` | Primary icon mark, Heydru-Red (`#F0216C`). Default choice — favicons, avatars, anywhere the icon stands alone. |
-| `icon-mark-black.svg` | Icon mark in Heydru-Black (`#393A3E`), for contexts where red can't be used (print, single-color contexts). |
-| `icon-mark-white.svg` | Icon mark in white, for dark/colored backgrounds. |
-| `logo-on-dark.svg` | Full lockup (icon + "heydru!" wordmark) with white text, for dark backgrounds. |
-| `logo-on-light.svg` | Full lockup with Heydru-Black (`#393A3E`) text, for light backgrounds. |
+| Term (as labeled in the source) | What it is | Files |
+|---|---|---|
+| **Logotipo** | The wordmark alone, no icon | `logotype-on-dark.svg`, `logotype-on-light.svg` |
+| **Síntesis gráfica** (the icon mark — commonly called the *isotipo*) | The "Q" speech-bubble alone, no wordmark | `icon-mark-red.svg`, `icon-mark-black.svg`, `icon-mark-white.svg` |
+| **Marca gráfica** | Icon + wordmark locked up together | `logo-on-dark.svg`, `logo-on-light.svg` |
 
-`svg/png/` — the same five files rasterized at 256/512px (icons) and 2x
-(lockups), for tools that don't take SVG. SVG is still the source; regenerate
-PNGs from it (`rsvg-convert`) rather than hand-exporting from Figma again.
+`svg/png/` holds the same files rasterized at 256/512px (icon) and 2x
+(wordmark/lockup), for tools that don't take SVG. SVG is still the source;
+regenerate PNGs from it (`rsvg-convert`) rather than hand-exporting from
+Figma again.
 
-The icon mark itself is always red (`#F0216C`) in the full lockups — only the
+The icon mark itself is always red (`#F0216C`) in the full lockup — only the
 wordmark color changes between the light/dark variants. Don't recolor the
 icon independently of these provided variants.
+
+### Clear space
+
+The source file's own guideline frames (not just my judgment): keep clear
+space on **all four sides of the marca gráfica equal to one icon-mark's
+width/height**, measured from the lockup's outer edges. Don't place other
+elements inside that margin.
 
 ## Colors
 
 `tokens/colors.json` — the full palette as named in Figma's Color Styles,
-with hex values read directly from the source file (not reconstructed from
-memory). Heydru-Red is primary.
+with hex values read directly from the source file's Color Styles panel
+(not reconstructed from memory). Heydru-Red is primary.
+
+The source file also documents full print breakdowns (RGB + CMYK + HEX) for
+the four core colors, on its own "COLORES" frame:
+
+| Style | HEX | CMYK |
+|---|---|---|
+| Heydru-Red | `#F0216C` | C0 M93 Y28 K0 |
+| Heydru-Azul (labeled "Heydru Blue" in the source) | `#384993` | C90 M76 Y6 K0 |
+| Heydru-Yellow | `#FFEA2E` | C3 M1 Y85 K0 |
+| Heydru-Black | `#393A3E` | C73 M65 Y60 K79 |
+
+The remaining eight colors (Red2, lightblue, orange, Turquoise, gray3/4/5,
+White) only exist as Color Styles in the file — no CMYK breakdown was given
+for them in the source; don't invent one.
+
+**Known discrepancy in the source file, not in these values:** the COLORES
+frame's own RGB text label for Heydru-Black reads "R:34 G:33 B:33", which
+doesn't actually convert to its own stated HEX (`#393A3E` = RGB 57,58,62).
+The HEX and the Color Style's actual fill agree with each other (verified
+two independent ways — the Color Style's own value, and the fill actually
+used in `logo-dark.svg`/`favicon.svg`), so `#393A3E` is what's recorded here;
+the RGB label next to it in the 2021 deck appears to be a typo, left as-is
+in the original artwork.
 
 | Style | Hex |
 |---|---|
@@ -52,10 +83,19 @@ memory). Heydru-Red is primary.
 
 ## Typography
 
-See `tokens/typography.md` — Poppins for headings, Roboto for body text.
+**The source brandbook specifies Roboto only** — four named weights (Light,
+Regular, Bold, ExtraBold), no second typeface. See `tokens/typography.md`.
+
+The live heydru.com site currently pairs Roboto (body) with **Poppins**
+(headings) — that pairing was introduced later, at website-build time, and
+isn't part of the original 2021 brandbook. Flagging this rather than quietly
+treating Poppins as canonical: if the Poppins pairing is a deliberate,
+kept evolution of the brand, say so here and it becomes the documented
+standard; if not, Roboto-only is what the source actually specifies.
 
 ## Updating this repo
 
 If the Figma file changes, re-verify values directly from its Color Styles
-panel (don't guess/retype from memory) and update `tokens/colors.json` and
-the relevant SVGs here first, then re-sync into any consuming project.
+panel and BRANDBOOK frames (don't guess/retype from memory) and update
+`tokens/colors.json` and the relevant SVGs here first, then re-sync into any
+consuming project.

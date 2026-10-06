@@ -1,9 +1,27 @@
 # Typography
 
-- **Headings:** [Poppins](https://fonts.google.com/specimen/Poppins) — weights 400/600/700/800.
-- **Body:** [Roboto](https://fonts.google.com/specimen/Roboto) — weights 300/400/500, italic 400.
+## Source brandbook
 
-Both are loaded from Google Fonts:
+The source Figma file (BRANDBOOK page, "TIPOGRAFÍA PRINCIPAL" frame)
+specifies **one typeface only**:
+
+- **[Roboto](https://fonts.google.com/specimen/Roboto)** — four named
+  weights: Light, Regular, Bold, ExtraBold.
+
+No second/display typeface is defined anywhere in the source file.
+
+## Live website pairing (not from the source brandbook)
+
+heydru.com currently pairs Roboto (body) with
+**[Poppins](https://fonts.google.com/specimen/Poppins)** (headings, weights
+400/600/700/800). This was introduced when the website was built, not in the
+original 2021 brandbook — recorded here as the de facto live choice, kept
+separate from the source so the two don't get conflated. If this pairing is
+meant to stick, it's worth formally adopting it into the brand (and updating
+this file to say so); until then, Roboto-only is what the source actually
+specifies.
+
+Loaded from Google Fonts:
 
 ```html
 <link

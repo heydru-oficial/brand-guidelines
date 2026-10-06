@@ -1,20 +1,51 @@
 {
-  "source": "Figma — final HEYDRU 2021 (Copy), Branding page, Color Styles",
+  "source": "Figma — final HEYDRU 2021 (Copy), BRANDBOOK page (Color Styles + COLORES frame)",
   "verifiedAt": "2026-10-05",
   "colors": {
-    "Heydru-Red": "#F0216C",
-    "Heydru-Red2": "#FE626C",
-    "Heydru-Azul": "#384993",
-    "Heydru-Yellow": "#FFEA2E",
-    "Heydru-Black": "#393A3E",
-    "Heydru-White": "#FFFFFF",
-    "Heydru-lightblue": "#6DDAFD",
-    "Heydru-orange": "#FF9839",
-    "Heydru-Turquoise": "#70EBE1",
-    "Heydru-gray3": "#AAAAAA",
-    "Heydru-gray4": "#5A5A5A",
-    "Heydru-gray5": "#333333"
+    "Heydru-Red": {"hex": "#F0216C", "cmyk": {"c": 0, "m": 93, "y": 28, "k": 0}},
+    "Heydru-Red2": {"hex": "#FE626C"},
+    "Heydru-Azul": {"hex": "#384993", "cmyk": {"c": 90, "m": 76, "y": 6, "k": 0}, "aka": "Heydru Blue"},
+    "Heydru-Yellow": {"hex": "#FFEA2E", "cmyk": {"c": 3, "m": 1, "y": 85, "k": 0}},
+    "Heydru-Black": {"hex": "#393A3E", "cmyk": {"c": 73, "m": 65, "y": 60, "k": 79}},
+    "Heydru-White": {"hex": "#FFFFFF"},
+    "Heydru-lightblue": {"hex": "#6DDAFD"},
+    "Heydru-orange": {"hex": "#FF9839"},
+    "Heydru-Turquoise": {"hex": "#70EBE1"},
+    "Heydru-gray3": {"hex": "#AAAAAA"},
+    "Heydru-gray4": {"hex": "#5A5A5A"},
+    "Heydru-gray5": {"hex": "#333333"}
   },
   "primary": "Heydru-Red",
-  "notes": "Heydru-Red (#F0216C) is the primary brand color and the only color the icon mark ships in — see svg/icon-mark-*.svg, which only vary the wordmark/background treatment (red/black/white), not the icon color itself, matching the source file's actual lockup pattern."
+  "notes": "CMYK is only documented in the source for the 4 core colors (Red, Azul, Yellow, Black) — the other 8 exist only as Color Styles, no print breakdown given. Heydru-Black's HEX (#393A3E) is verified against the Color Style and against logo-dark.svg/favicon.svg; the source deck's own RGB text label for it (34,33,33) doesn't match that HEX and appears to be a typo in the original artwork, not a second valid value.",
+  "logo": {
+    "terminology": {
+      "logotipo": "wordmark alone, no icon",
+      "sintesisGrafica": "icon mark alone, no wordmark (commonly called the isotipo)",
+      "marcaGrafica": "icon + wordmark locked up together"
+    },
+    "clearSpace": "On all four sides of the marca gráfica, equal to one icon-mark's width/height, measured from the lockup's outer edges — per the source file's own guideline frames.",
+    "logotype": {
+      "onDark": {"svg": "svg/logotype-on-dark.svg", "png": "svg/png/logotype-on-dark@2x.png", "use": "white wordmark, no icon, for dark backgrounds"},
+      "onLight": {"svg": "svg/logotype-on-light.svg", "png": "svg/png/logotype-on-light@2x.png", "use": "Heydru-Black wordmark, no icon, for light backgrounds"}
+    },
+    "iconMark": {
+      "red": {"svg": "svg/icon-mark-red.svg", "png": ["svg/png/icon-mark-red@256.png", "svg/png/icon-mark-red@512.png"]},
+      "black": {"svg": "svg/icon-mark-black.svg", "png": ["svg/png/icon-mark-black@256.png", "svg/png/icon-mark-black@512.png"]},
+      "white": {"svg": "svg/icon-mark-white.svg", "png": ["svg/png/icon-mark-white@256.png", "svg/png/icon-mark-white@512.png"]}
+    },
+    "lockup": {
+      "onDark": {"svg": "svg/logo-on-dark.svg", "png": "svg/png/logo-on-dark@2x.png", "use": "white wordmark, for dark backgrounds"},
+      "onLight": {"svg": "svg/logo-on-light.svg", "png": "svg/png/logo-on-light@2x.png", "use": "Heydru-Black wordmark, for light backgrounds"}
+    }
+  },
+  "typography": {
+    "source": "Roboto only, per the source brandbook's own TIPOGRAFÍA PRINCIPAL frame",
+    "sourceWeights": ["Light", "Regular", "Bold", "ExtraBold"],
+    "liveWebsitePairing": {
+      "note": "heydru.com currently pairs Poppins (headings) with Roboto (body). This pairing was introduced at website-build time and is not part of the original 2021 brandbook — recorded here as the de facto live choice, not as something verified against the source file.",
+      "display": {"family": "Poppins", "weights": [400, 600, 700, 800]},
+      "body": {"family": "Roboto", "weights": [300, 400, 500], "italic": [400]}
+    },
+    "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Roboto:ital,wght@0,300;0,400;0,500;1,400&display=swap"
+  }
 }
