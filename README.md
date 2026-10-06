@@ -19,7 +19,14 @@ ones:
 |---|---|---|
 | **Logotipo** | The wordmark alone, no icon | `logotype-on-dark.svg`, `logotype-on-light.svg` |
 | **Síntesis gráfica** (the icon mark — commonly called the *isotipo*) | The "Q" speech-bubble alone, no wordmark | `icon-mark-red.svg`, `icon-mark-black.svg`, `icon-mark-white.svg` |
-| **Marca gráfica** | Icon + wordmark locked up together | `logo-on-dark.svg`, `logo-on-light.svg` |
+| **Marca gráfica** | Icon + wordmark locked up together | `logo-on-dark.svg`, `logo-on-light.svg` (horizontal), `lockup-vertical-on-dark.svg`, `lockup-vertical-on-light.svg` (icon stacked above wordmark) |
+
+The source file shows both a horizontal lockup (icon beside the wordmark)
+and a vertical one (icon stacked above it, e.g. its "heydru-0021" frame) —
+both are real, intended variants, not a stylistic one-off. The vertical
+files here are composited from the same verified icon and wordmark paths
+used everywhere else on this page, not a separate Figma export, so they're
+pixel-consistent with the horizontal lockup.
 
 `svg/png/` holds the same files rasterized at 256/512px (icon) and 2x
 (wordmark/lockup), for tools that don't take SVG. SVG is still the source;
@@ -95,6 +102,24 @@ what*; a swatch grid doesn't. Modeled on how mature brand systems do this
 | **Neutral** | Black, White, gray3/4/5 | ~75% | Surfaces, body text, structure — the dominant share of any layout |
 | **Primary** | Red | ~15% | The one hero color: CTAs, the icon mark, key emphasis. Don't compete with it using a second saturated color in the same view |
 | **Accent** | Azul, Yellow, Red2, orange, Turquoise, lightblue | ~10% | Sparing use for variety, data viz, or illustration — never a substitute for the primary red on a CTA |
+
+### Color ramps (not in the source — our own addition)
+
+GitHub's own brand toolkit gives its hero color and its neutrals a 6-step
+tint/shade ramp each, with the base color anchored partway through (their
+"GITHUB GREEN" = Green 4 of 6), not just one flat swatch. Same idea applied
+here — computed in HSL off the verified base hex, not picked by eye, so
+each step is the same hue at a different lightness:
+
+| | 100 | 200 | 300 | 400 | 500 | 600 |
+|---|---|---|---|---|---|---|
+| **red-*** | `#FDD8E5` | `#F896B9` | `#F24080` | `#F0216C` ← base | `#B60C4A` | `#600627` |
+| **neutral-*** | `#FFFFFF` ← Heydru-White | `#D7D8D8` | `#B0B0B2` | `#88898B` | `#616165` | `#393A3E` ← Heydru-Black |
+
+Named `red-NNN`/`neutral-NNN` (not "Red 1-6") deliberately, so these can't
+be confused with the distinct named swatches above (`Heydru-Red2`,
+`Heydru-gray3/4/5`) — different things, same color family. See
+`tokens/colors.json` → `system.ramps` for the machine-readable version.
 
 Also added, for product-UI needs a 2021 print-oriented brandbook never had to
 cover (already live on heydru.com as `--hd-pink-hover`):

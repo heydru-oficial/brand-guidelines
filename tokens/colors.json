@@ -29,6 +29,11 @@
       "Heydru-Red-hover": {"hex": "#D81E61", "use": "hover/active state for red CTAs/links — a ~10% darken of Heydru-Red"},
       "Heydru-Red-wash": {"rgba": "rgba(240, 33, 108, 0.08)", "use": "subtle tinted background, e.g. a selected row or badge, where solid red would be too loud"},
       "Heydru-Red-wash-strong": {"rgba": "rgba(240, 33, 108, 0.16)", "use": "hover state for the wash above"}
+    },
+    "ramps": {
+      "note": "Not in the source file. 6-step tint/shade ramps computed in HSL off the verified base hex, same idea as GitHub's brand-toolkit color ramps. Named red-NNN/neutral-NNN, deliberately distinct from the named swatches above (Heydru-Red2, Heydru-gray3/4/5) to avoid confusion.",
+      "red": {"base": "red-400", "steps": {"red-100": "#FDD8E5", "red-200": "#F896B9", "red-300": "#F24080", "red-400": "#F0216C", "red-500": "#B60C4A", "red-600": "#600627"}},
+      "neutral": {"base": ["neutral-100", "neutral-600"], "steps": {"neutral-100": "#FFFFFF", "neutral-200": "#D7D8D8", "neutral-300": "#B0B0B2", "neutral-400": "#88898B", "neutral-500": "#616165", "neutral-600": "#393A3E"}}
     }
   },
   "logo": {
@@ -48,8 +53,14 @@
       "white": {"svg": "svg/icon-mark-white.svg", "png": ["svg/png/icon-mark-white@256.png", "svg/png/icon-mark-white@512.png"]}
     },
     "lockup": {
-      "onDark": {"svg": "svg/logo-on-dark.svg", "png": "svg/png/logo-on-dark@2x.png", "use": "white wordmark, for dark backgrounds"},
-      "onLight": {"svg": "svg/logo-on-light.svg", "png": "svg/png/logo-on-light@2x.png", "use": "Heydru-Black wordmark, for light backgrounds"}
+      "horizontal": {
+        "onDark": {"svg": "svg/logo-on-dark.svg", "png": "svg/png/logo-on-dark@2x.png", "use": "white wordmark, for dark backgrounds"},
+        "onLight": {"svg": "svg/logo-on-light.svg", "png": "svg/png/logo-on-light@2x.png", "use": "Heydru-Black wordmark, for light backgrounds"}
+      },
+      "vertical": {
+        "onDark": {"svg": "svg/lockup-vertical-on-dark.svg", "png": "svg/png/lockup-vertical-on-dark@2x.png", "use": "icon stacked above white wordmark, for dark backgrounds"},
+        "onLight": {"svg": "svg/lockup-vertical-on-light.svg", "png": "svg/png/lockup-vertical-on-light@2x.png", "use": "icon stacked above Heydru-Black wordmark, for light backgrounds"}
+      }
     }
   },
   "typography": {
