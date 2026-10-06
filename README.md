@@ -19,7 +19,7 @@ ones:
 |---|---|---|
 | **Logotipo** | The wordmark alone, no icon | `logotype-on-dark.svg`, `logotype-on-light.svg` |
 | **Síntesis gráfica** (the icon mark — commonly called the *isotipo*) | The "Q" speech-bubble alone, no wordmark | `icon-mark-red.svg` (default), `icon-mark-white.svg` (dark backgrounds), `icon-mark-black.svg`, `icon-mark-blue.svg`, `icon-mark-yellow.svg` (alternates — see below) |
-| **Marca gráfica** | Icon + wordmark locked up together | `logo-on-dark.svg`, `logo-on-light.svg` (horizontal), `lockup-vertical-on-dark.svg`, `lockup-vertical-on-light.svg` (icon stacked above wordmark) |
+| **Marca gráfica** | Icon + wordmark locked up together | `logo-on-dark.svg`, `logo-on-light.svg` (horizontal), `lockup-vertical-on-dark.svg`, `lockup-vertical-on-light.svg` (icon stacked above wordmark), plus `logo-on-dark-mono.svg` / `lockup-vertical-on-dark-mono.svg` (monochrome — icon and wordmark both white, see below) |
 
 The source file shows both a horizontal lockup (icon beside the wordmark)
 and a vertical one (icon stacked above it, e.g. its "heydru-0021" frame) —
@@ -51,6 +51,23 @@ red by default, reach for one of these only where context calls for it
 (e.g. matching a section's accent color, or a single-ink print constraint).
 Don't introduce a color outside this set, and don't recolor the icon
 independently of these provided variants.
+
+### Monochrome lockup
+
+The default on-dark lockup is two-tone: red icon, white wordmark
+(`logo-on-dark.svg`, `lockup-vertical-on-dark.svg`). The source file's
+"heydru-009" frame shows a separate, genuinely distinct third option: icon
+and wordmark **both white** — not a recolor experiment, an intended variant
+in its own right, in both horizontal and vertical form:
+
+| | Horizontal | Vertical |
+|---|---|---|
+| Monochrome (icon + wordmark both white) | `logo-on-dark-mono.svg` | `lockup-vertical-on-dark-mono.svg` |
+
+Use it for single-ink or dark/saturated contexts where the two-tone
+treatment's red icon would compete with the background — not as a default
+replacement for the two-tone on-dark lockup, which stays the primary
+on-dark option.
 
 ### Clear space
 

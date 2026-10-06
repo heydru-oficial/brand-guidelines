@@ -60,6 +60,7 @@
     "lockup": {
       "horizontal": {
         "onDark": {"svg": "svg/logo-on-dark.svg", "png": "svg/png/logo-on-dark@2x.png", "use": "white wordmark, for dark backgrounds"},
+        "onDarkMonochrome": {"svg": "svg/logo-on-dark-mono.svg", "png": "svg/png/logo-on-dark-mono@2x.png", "use": "icon and wordmark both white — a separate, real option for single-ink/dark contexts, not a substitute for the two-tone onDark lockup"},
         "onLight": {"svg": "svg/logo-on-light.svg", "png": "svg/png/logo-on-light@2x.png", "use": "Heydru-Black wordmark, for light backgrounds"},
         "alternateIconColors": {
           "black": {"svg": "svg/logo-on-light-black-icon.svg", "png": "svg/png/logo-on-light-black-icon@2x.png"},
@@ -69,6 +70,7 @@
       },
       "vertical": {
         "onDark": {"svg": "svg/lockup-vertical-on-dark.svg", "png": "svg/png/lockup-vertical-on-dark@2x.png", "use": "icon stacked above white wordmark, for dark backgrounds"},
+        "onDarkMonochrome": {"svg": "svg/lockup-vertical-on-dark-mono.svg", "png": "svg/png/lockup-vertical-on-dark-mono@2x.png", "use": "icon and wordmark both white, icon stacked above — a separate, real option for single-ink/dark contexts"},
         "onLight": {"svg": "svg/lockup-vertical-on-light.svg", "png": "svg/png/lockup-vertical-on-light@2x.png", "use": "icon stacked above Heydru-Black wordmark, for light backgrounds"},
         "alternateIconColors": {
           "black": {"svg": "svg/lockup-vertical-on-light-black-icon.svg", "png": "svg/png/lockup-vertical-on-light-black-icon@2x.png"},
