@@ -21,6 +21,10 @@ instead of re-deriving them.
 | `logo-on-dark.svg` | Full lockup (icon + "heydru!" wordmark) with white text, for dark backgrounds. |
 | `logo-on-light.svg` | Full lockup with Heydru-Black (`#393A3E`) text, for light backgrounds. |
 
+`svg/png/` — the same five files rasterized at 256/512px (icons) and 2x
+(lockups), for tools that don't take SVG. SVG is still the source; regenerate
+PNGs from it (`rsvg-convert`) rather than hand-exporting from Figma again.
+
 The icon mark itself is always red (`#F0216C`) in the full lockups — only the
 wordmark color changes between the light/dark variants. Don't recolor the
 icon independently of these provided variants.
