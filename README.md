@@ -107,6 +107,17 @@ cover (already live on heydru.com as `--hd-pink-hover`):
 
 See `tokens/colors.json` → `system` for the machine-readable version.
 
+## Applications
+
+`applications/` — real, current touchpoints, not stock mockup renders (deliberately skipped the
+mug/t-shirt/stamp mockups from the 2021 deck — generic swag templates don't reflect how this
+brand actually shows up in 2026, and read as padding against the Voice & Tone guidance above).
+
+| File | What it is |
+|---|---|
+| `email-signature.html` | Table-based HTML signature, inline-styled for Outlook/Gmail/Apple Mail compatibility. Open it and copy the rendered block into your email client's signature editor. |
+| `linkedin-banner.png` | 1568×392 (LinkedIn's banner slot, effectively 1584×396) — text kept clear of the bottom-left profile-photo overlap zone. Preview in LinkedIn's own banner editor before publishing; exact safe-zone cropping varies by viewport. |
+
 ## Legacy source (view-only)
 
 The original [Figma file](https://www.figma.com/design/56WZVAxqnPHaqjkf9TDoZo/final-HEYDRU-2021--Copy-?node-id=1-16) —
