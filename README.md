@@ -18,7 +18,7 @@ ones:
 | Term (as labeled in the source) | What it is | Files |
 |---|---|---|
 | **Logotipo** | The wordmark alone, no icon | `logotype-on-dark.svg`, `logotype-on-light.svg` |
-| **Síntesis gráfica** (the icon mark — commonly called the *isotipo*) | The "Q" speech-bubble alone, no wordmark | `icon-mark-red.svg`, `icon-mark-black.svg`, `icon-mark-white.svg` |
+| **Síntesis gráfica** (the icon mark — commonly called the *isotipo*) | The "Q" speech-bubble alone, no wordmark | `icon-mark-red.svg` (default), `icon-mark-white.svg` (dark backgrounds), `icon-mark-black.svg`, `icon-mark-blue.svg`, `icon-mark-yellow.svg` (alternates — see below) |
 | **Marca gráfica** | Icon + wordmark locked up together | `logo-on-dark.svg`, `logo-on-light.svg` (horizontal), `lockup-vertical-on-dark.svg`, `lockup-vertical-on-light.svg` (icon stacked above wordmark) |
 
 The source file shows both a horizontal lockup (icon beside the wordmark)
@@ -33,9 +33,24 @@ pixel-consistent with the horizontal lockup.
 regenerate PNGs from it (`rsvg-convert`) rather than hand-exporting from
 Figma again.
 
-The icon mark itself is always red (`#F0216C`) in the full lockup — only the
-wordmark color changes between the light/dark variants. Don't recolor the
-icon independently of these provided variants.
+### Alternate icon colors
+
+Red is the default icon color — but the source file's own color-variant
+grids (both the horizontal lockup one and the vertical lockup one) also
+show the icon in black, blue, and yellow, always with black wordmark text
+where there's a wordmark. Consistent across every form:
+
+| | Isotipo (icon alone) | Horizontal lockup | Vertical lockup |
+|---|---|---|---|
+| Black | `icon-mark-black.svg` | `logo-on-light-black-icon.svg` | `lockup-vertical-on-light-black-icon.svg` |
+| Blue | `icon-mark-blue.svg` | `logo-on-light-blue-icon.svg` | `lockup-vertical-on-light-blue-icon.svg` |
+| Yellow | `icon-mark-yellow.svg` | `logo-on-light-yellow-icon.svg` | `lockup-vertical-on-light-yellow-icon.svg` |
+
+These are real alternates shown in the source, not an invented option — use
+red by default, reach for one of these only where context calls for it
+(e.g. matching a section's accent color, or a single-ink print constraint).
+Don't introduce a color outside this set, and don't recolor the icon
+independently of these provided variants.
 
 ### Clear space
 
