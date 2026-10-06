@@ -17,6 +17,20 @@
   },
   "primary": "Heydru-Red",
   "notes": "CMYK is only documented in the source for the 4 core colors (Red, Azul, Yellow, Black) — the other 8 exist only as Color Styles, no print breakdown given. Heydru-Black's HEX (#393A3E) is verified against the Color Style and against logo-dark.svg/favicon.svg; the source deck's own RGB text label for it (34,33,33) doesn't match that HEX and appears to be a typo in the original artwork, not a second valid value.",
+  "system": {
+    "note": "The source file lists 12 Color Styles as a flat set with no stated hierarchy or usage guidance. This grouping/ratio is our own addition (not from the 2021 source) — same idea as how mature brand systems (e.g. GitHub's: ~80% neutral, ~10% grey, ~10% hero green) assign roles so the palette reads as a system instead of 12 equal swatches.",
+    "roles": {
+      "neutral": {"colors": ["Heydru-Black", "Heydru-White", "Heydru-gray3", "Heydru-gray4", "Heydru-gray5"], "targetShare": "~75%", "use": "surfaces, body text, structure — the dominant share of any layout"},
+      "primary": {"colors": ["Heydru-Red"], "targetShare": "~15%", "use": "the one hero color — CTAs, the icon mark, key emphasis. Never compete with it using a second saturated color in the same view."},
+      "accent": {"colors": ["Heydru-Azul", "Heydru-Yellow", "Heydru-Red2", "Heydru-orange", "Heydru-Turquoise", "Heydru-lightblue"], "targetShare": "~10%", "use": "sparing use for variety, data visualization, or illustration — never as a substitute for the primary red on a CTA"}
+    },
+    "derivedTints": {
+      "note": "Not in the source file — derived for product-UI needs (hover/active states, subtle backgrounds) that a 2021 print-oriented brandbook never had to specify. Already live on heydru.com as --hd-pink-hover.",
+      "Heydru-Red-hover": {"hex": "#D81E61", "use": "hover/active state for red CTAs/links — a ~10% darken of Heydru-Red"},
+      "Heydru-Red-wash": {"rgba": "rgba(240, 33, 108, 0.08)", "use": "subtle tinted background, e.g. a selected row or badge, where solid red would be too loud"},
+      "Heydru-Red-wash-strong": {"rgba": "rgba(240, 33, 108, 0.16)", "use": "hover state for the wash above"}
+    }
+  },
   "logo": {
     "terminology": {
       "logotipo": "wordmark alone, no icon",

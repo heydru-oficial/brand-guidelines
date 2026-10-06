@@ -81,6 +81,41 @@ in the original artwork.
 | Heydru-gray4 | `#5A5A5A` |
 | Heydru-gray5 | `#333333` |
 
+### Color system (not in the source — our own addition)
+
+The source file treats all 12 colors as one flat, equal-weight list — no
+stated hierarchy, no usage guidance. That's the main thing "missing love" in
+the original: a system tells you *how much* of each color to use and *for
+what*; a swatch grid doesn't. Modeled on how mature brand systems do this
+(e.g. [GitHub's](https://brand.github.com/foundations/color): ~80% neutral,
+~10% grey, ~10% hero green):
+
+| Role | Colors | Target share | Use |
+|---|---|---|---|
+| **Neutral** | Black, White, gray3/4/5 | ~75% | Surfaces, body text, structure — the dominant share of any layout |
+| **Primary** | Red | ~15% | The one hero color: CTAs, the icon mark, key emphasis. Don't compete with it using a second saturated color in the same view |
+| **Accent** | Azul, Yellow, Red2, orange, Turquoise, lightblue | ~10% | Sparing use for variety, data viz, or illustration — never a substitute for the primary red on a CTA |
+
+Also added, for product-UI needs a 2021 print-oriented brandbook never had to
+cover (already live on heydru.com as `--hd-pink-hover`):
+
+| Token | Value | Use |
+|---|---|---|
+| Heydru-Red-hover | `#D81E61` | Hover/active state for red CTAs/links (~10% darken of Red) |
+| Heydru-Red-wash | `rgba(240, 33, 108, 0.08)` | Subtle tinted background (selected row, badge) where solid red is too loud |
+| Heydru-Red-wash-strong | `rgba(240, 33, 108, 0.16)` | Hover state for the wash above |
+
+See `tokens/colors.json` → `system` for the machine-readable version.
+
+## Legacy source (view-only)
+
+The original [Figma file](https://www.figma.com/design/56WZVAxqnPHaqjkf9TDoZo/final-HEYDRU-2021--Copy-?node-id=1-16) —
+**"final HEYDRU 2021 (Copy)," BRANDBOOK page** — is kept as a view-only legacy
+reference for anyone who wants to see the original 2021 artwork directly.
+Everything in this repo was verified against it, but *this repo*, not the
+Figma file, is the one to update going forward — the Figma file isn't
+expected to change again.
+
 ## Typography
 
 **The source brandbook specifies Roboto only** — four named weights (Light,
