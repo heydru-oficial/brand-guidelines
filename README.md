@@ -1,5 +1,9 @@
 # Heydru Brand Guidelines
 
+**[View the style guide →](https://claude.ai/artifact/KzLNjss2QJZVFs2J7JT5oc)**
+— a browsable page with the logo variants, color swatches, and type specimens
+below, instead of reading the raw files.
+
 Single source of truth for the Heydru brand: logo assets, color palette, and
 typography. Pulled directly from the source Figma file (`final HEYDRU 2021
 (Copy)`, Branding page) so every product/site can reuse the same values
