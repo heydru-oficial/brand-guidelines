@@ -10,7 +10,32 @@ heydru! is a senior-led Drupal engineering boutique. The look is dark, editorial
 - The primary action is always **Talk to a Drupal Architect ↗**. The fallback is **Prefer email? hi@heydru.com**.
 - Site copy is in English. Spanish appears only in slugs (`/conversemos`) and named assets.
 
-## Color
+## Roles: start here for new work
+
+Tokens come in two layers. **Roles** (`role-*`, `status-*`, `accent-*`, `chart-*`, the **Roles** type group, `space-*`, `format-*`) say what a value is for. They are what decks, documents, social posts and new pages use. The **website tokens** below them (`bg`, `muted`, `card-title`, `service-pad`…) record exactly what heydru.com ships, and the roles point at them, so nothing on the site changes.
+
+- **Text has three levels:** `role-text-primary`, `role-text-secondary`, `role-text-tertiary`. Don't reach for `nav`, `meta`, `faint` or `subtle`; those are website details.
+- **Surfaces:** `role-surface-page`, then `role-surface-section` for alternating bands, `role-surface-card` for cards and panels, and `role-surface-emphasis` for the single closing call to action. Separate everything with `role-border`.
+- **Action:** one `role-action` fill per view with `role-on-action` text; `role-link` for inline links and small accent text; `role-focus` on anything interactive.
+- **Type:** `role-display` (once per page or slide), `role-h1` to `role-h4`, `role-body-l`, `role-body`, `role-small`, `role-label`. Headings are Poppins 700; everything else is Roboto. Nothing below `role-label` (12px).
+- **Space:** a 4px scale, `space-1` (4px) to `space-24` (96px). Pick from it; don't invent 13px or 25px.
+
+## Status, services and charts
+
+- **Status colors** are `status-success`, `status-warning`, `status-danger`, `status-info`. Every one passes 4.5:1 as text in both themes. Always pair them with a word or icon; color alone never carries meaning.
+- **Danger is orange, not red.** Brand red means "act here". An error in red would look like a call to action, and orange against turquoise success stays distinguishable for red–green color blindness.
+- **Services keep their colors on any ground** through `accent-rescue`, `accent-advisory` and `accent-ai`. In light, the advisory and AI accents darken to `#0f766e` and `#7a6100` so marks and text stay readable on white. To use the bright yellow or turquoise on white, make it a fill and put `#101014` ink on it.
+- **Charts** use `chart-1` to `chart-5` in that order. `chart-1` (red) is the series the chart is about; `chart-5` (gray) is the baseline or "everything else". Label series directly instead of relying on a legend where you can.
+
+## Light and print
+
+Proposals, PDFs, email and print are **light**. Use the same roles with the light theme: `role-surface-page` is white, text is `#393a3e`, and links and small red text are `#b60c4a`. Use bright `red` only for fills, the logo and type at 24px and above. The logo on light is `logo-on-light.svg`.
+
+## Formats
+
+Canvas sizes and margins are the `format-*` tokens: 16:9 slides (1920×1080, 96px margins), square and 4:5 social posts (1080 wide, 80px margins), Open Graph images (1200×630), the LinkedIn banner (1584×396, bottom-left kept clear) and A4 (20mm margins, light theme). One statement per slide or post; the logo sits bottom-left at one icon-mark of clear space.
+
+## Color (website tokens)
 
 The system is **dark-first**. `dark` is the default theme and `light` is the alternate one, switched with the theme toggle.
 
@@ -20,9 +45,9 @@ The system is **dark-first**. `dark` is the default theme and `light` is the alt
 - **Put dark ink on red.** Button labels use `on-red` (#101014), not white. On hover the fill moves to `red-hover`.
 - **Accents belong to the services.** `turquoise` is Architecture Advisory and `yellow` is Drupal AI Engineering. Each is used only for that service's line art and hover border. `yellow` is also the dark-theme `focus` ring and the skip-link fill. Never set `yellow` or `turquoise` as text on a light ground, or `blue` as text on `bg`.
 - **The closing band** is the only tinted ground: `surface-closing`, edged in `red-border`.
-- **The 2021 brandbook swatches** (Red2 #FE626C, orange #FF9839, lightblue #6DDAFD, gray3/4/5) are not part of the UI. Keep them out of new web and product work. For print and illustration, their values are in the brand-guidelines repo.
+- **Of the 2021 brandbook swatches,** only two came back, and only as roles: orange is `status-danger` in dark, and lightblue is `status-info` and `chart-4` in dark. Red2 and gray3/4/5 stay out of new work; their values are in the brand-guidelines repo for print.
 
-## Typography
+## Typography (website styles)
 
 - **Poppins 700** is the display face. It is used only for headings and step numbers, always bold, with tight tracking (−0.045em by default, −0.065em on the hero). Line height is 1.02–1.12 for big headings and 1.3 for card and article titles. Only the 700 weight ships, so don't specify any other.
 - **Roboto** (a variable font, 100–900) is the body face. Body text is 16px with 1.65 line height. Use 400 for text, 500 for eyebrows and 700 for button labels.

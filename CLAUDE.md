@@ -39,6 +39,11 @@ artifact is a viewer and working copy; this folder is the durable copy).
   (`{"tokens":[{"name","value","usage"}]}`); colors are
   `{"dark": …, "light": …}` with dark first. Don't convert it to a
   name→value map. Every token keeps a `usage` note.
+- **Two layers in tokens.json.** Roles (`role-*`, `status-*`, `accent-*`,
+  `chart-*`, the `Roles` type group, `space-*`, `format-*`) are for new work;
+  most color roles are aliases (`"{muted}"`) of website tokens. Website tokens
+  record what heydru.com ships: don't delete or rename them while the site
+  uses them, and don't point new work at them when a role exists.
 - `components/`: `bundle.css` (classes ported from the site) and one folder per
   component with `preview.html` + `README.md`. `Cover/` is the artifact's cover.
 - `fonts/`: Poppins 700 and Roboto variable, byte-identical to
