@@ -1,6 +1,6 @@
 {
-  "source": "Figma — final HEYDRU 2021 (Copy), BRANDBOOK page (Color Styles + COLORES frame)",
-  "verifiedAt": "2026-10-05",
+  "source": "heydru.com for the web palette and typography (see `web`, `typography`); Figma — final HEYDRU 2021 (Copy), BRANDBOOK page (Color Styles + COLORES frame) for the 12 legacy swatches, CMYK and logos",
+  "verifiedAt": "2026-10-08",
   "colors": {
     "Heydru-Red": {"hex": "#F0216C", "cmyk": {"c": 0, "m": 93, "y": 28, "k": 0}},
     "Heydru-Red2": {"hex": "#FE626C"},
@@ -25,7 +25,7 @@
       "accent": {"colors": ["Heydru-Azul", "Heydru-Yellow", "Heydru-Red2", "Heydru-orange", "Heydru-Turquoise", "Heydru-lightblue"], "targetShare": "~10%", "use": "sparing use for variety, data visualization, or illustration — never as a substitute for the primary red on a CTA"}
     },
     "derivedTints": {
-      "note": "Not in the source file — derived for product-UI needs (hover/active states, subtle backgrounds) that a 2021 print-oriented brandbook never had to specify. Already live on heydru.com as --hd-pink-hover.",
+      "note": "Not in the source file — derived for product-UI needs (hover/active states, subtle backgrounds). Not used by the current heydru.com, whose hover and small-text reds are web.tokens.red-hover and web.tokens.red-text.",
       "Heydru-Red-hover": {"hex": "#D81E61", "use": "hover/active state for red CTAs/links — a ~10% darken of Heydru-Red"},
       "Heydru-Red-wash": {"rgba": "rgba(240, 33, 108, 0.08)", "use": "subtle tinted background, e.g. a selected row or badge, where solid red would be too loud"},
       "Heydru-Red-wash-strong": {"rgba": "rgba(240, 33, 108, 0.16)", "use": "hover state for the wash above"}
@@ -34,6 +34,43 @@
       "note": "Not in the source file. 6-step tint/shade ramps computed in HSL off the verified base hex, same idea as GitHub's brand-toolkit color ramps. Named red-NNN/neutral-NNN, deliberately distinct from the named swatches above (Heydru-Red2, Heydru-gray3/4/5) to avoid confusion.",
       "red": {"base": "red-400", "steps": {"red-100": "#FDD8E5", "red-200": "#F896B9", "red-300": "#F24080", "red-400": "#F0216C", "red-500": "#B60C4A", "red-600": "#600627"}},
       "neutral": {"base": ["neutral-100", "neutral-600"], "steps": {"neutral-100": "#FFFFFF", "neutral-200": "#D7D8D8", "neutral-300": "#B0B0B2", "neutral-400": "#88898B", "neutral-500": "#616165", "neutral-600": "#393A3E"}}
+    }
+  },
+  "web": {
+    "note": "The web UI palette as heydru.com ships it (astro/src/styles/global.css). heydru.com is the source of truth for digital work; when this block and the 2021 swatches disagree for screen use, this block wins. Dark is the default theme.",
+    "themes": ["dark", "light"],
+    "tokens": {
+      "bg": {"dark": "#101014", "light": "#ffffff", "use": "Page background (--bg). The site is dark-first; light is the theme toggle. Never use #393a3e as a dark ground — that is light-mode ink."},
+      "surface": {"dark": "#17171b", "light": "#f5f5f7", "use": "Service cards, dropdown, mobile nav panel, founder image well (--surface)."},
+      "surface-raised": {"dark": "#141418", "light": "#f7f7f9", "use": "Alternating 'raised' sections, the trust strip and the cards inside them."},
+      "surface-hover": {"dark": "#202026", "light": "#fde8f0", "use": "Hover fill for linked content cards."},
+      "surface-code": {"dark": "#1c1c22", "light": "#f5f5f7", "use": "Code blocks inside prose."},
+      "surface-closing": {"dark": "#1b1119", "light": "#fdf3f7", "use": "Closing call-to-action band: a red-tinted ground."},
+      "header-bg": {"dark": "#101014ed", "light": "#ffffffed", "use": "Sticky header fill, under an 18px backdrop blur."},
+      "text": {"dark": "#f5f5f6", "light": "#393a3e", "use": "Default text on bg, surface and surface-raised (17.4:1 dark, 11.4:1 light)."},
+      "text-strong": {"dark": "#ffffff", "light": "#393a3e", "use": "Hero period, prose <strong>, the closing email link, button.secondary text."},
+      "text-soft": {"dark": "#e5e5e9", "light": "#393a3e", "use": "Eyebrows and card CTAs (15.1:1 dark)."},
+      "prose": {"dark": "#d0d0d7", "light": "#393a3e", "use": "Long-form article and About body copy (12.4:1 dark)."},
+      "nav": {"dark": "#cacad0", "light": "#393a3e", "use": "Desktop navigation links; hover goes to text-strong (dark) or red-text (light)."},
+      "muted": {"dark": "#b0b0b8", "light": "#5a5a5a", "use": "Paragraphs: every <p> defaults to muted. 8.8:1 on bg dark, 6.9:1 light."},
+      "meta": {"dark": "#bfbfc8", "light": "#5a5a5a", "use": "Uppercase card-meta labels above card titles."},
+      "faint": {"dark": "#aaaab5", "light": "#5a5a5a", "use": "Footer column eyebrows and the visual caption under the hero art."},
+      "subtle": {"dark": "#96969f", "light": "#5a5a5a", "use": "Article index numbers and the footer legal line (6.5:1 dark)."},
+      "caption": {"dark": "#8d8d97", "light": "#5a5a5a", "use": "Hero location label (5.8:1 dark) — the dimmest text the site uses; go no lower."},
+      "line": {"dark": "#ffffff20", "light": "#393a3e25", "use": "Every hairline: header and section borders, card-grid gutters, ruled lists. Borders, never shadows, separate things."},
+      "red": {"dark": "#f0216c", "light": "#f0216c", "use": "Heydru-Red: primary CTA fill, accent words in headings (\"we step in.\"), arrows, status dot, process-step top rule. As text only at 24px+ in light (4.09:1 on white); 4.65:1 on bg dark."},
+      "red-text": {"dark": "#f896b9", "light": "#b60c4a", "use": "Red for small text: list numbers, section index, prose links, article eyebrow, current TOC item, light-mode hover. 9.1:1 dark, 6.7:1 light."},
+      "red-step": {"dark": "#f24080", "light": "#b60c4a", "use": "Large outlined step numbers (01–04) in the process grid."},
+      "red-hover": {"dark": "#f896b9", "light": "#f896b9", "use": "Primary button background on hover (on-red text stays 9.1:1)."},
+      "on-red": {"dark": "#101014", "light": "#101014", "use": "Text on a red or red-hover fill — dark ink, not white (4.65:1 on red)."},
+      "red-glow": {"dark": "#f0216c15", "light": "#f0216c15", "use": "4px halo ring around the status dot."},
+      "red-border": {"dark": "#f0216c50", "light": "#f0216c50", "use": "Top and bottom border of the closing band."},
+      "blue": {"dark": "#384993", "light": "#384993", "use": "Heydru-Azul. Declared on the site but used sparingly; never text on bg dark (2.3:1)."},
+      "yellow": {"dark": "#ffea2e", "light": "#ffea2e", "use": "Focus ring in dark, skip-link fill, Drupal AI Engineering service art and hover border. Never text on white (1.2:1)."},
+      "turquoise": {"dark": "#70ebe1", "light": "#70ebe1", "use": "Architecture Advisory service art and hover border. Never text on white (1.4:1)."},
+      "focus": {"dark": "#ffea2e", "light": "#b60c4a", "use": "2px focus outline, offset 6px on links (4px on buttons)."},
+      "selection-bg": {"dark": "#f896b9", "light": "#fdd8e5", "use": "::selection background."},
+      "selection-text": {"dark": "#101014", "light": "#600627", "use": "::selection text."}
     }
   },
   "logo": {
@@ -61,12 +98,7 @@
       "horizontal": {
         "onDark": {"svg": "svg/logo-on-dark.svg", "png": "svg/png/logo-on-dark@2x.png", "use": "white wordmark, for dark backgrounds"},
         "onDarkMonochrome": {"svg": "svg/logo-on-dark-mono.svg", "png": "svg/png/logo-on-dark-mono@2x.png", "use": "icon and wordmark both white — a separate, real option for single-ink/dark contexts, not a substitute for the two-tone onDark lockup"},
-        "onLight": {"svg": "svg/logo-on-light.svg", "png": "svg/png/logo-on-light@2x.png", "use": "Heydru-Black wordmark, for light backgrounds"},
-        "alternateIconColors": {
-          "black": {"svg": "svg/logo-on-light-black-icon.svg", "png": "svg/png/logo-on-light-black-icon@2x.png"},
-          "blue": {"svg": "svg/logo-on-light-blue-icon.svg", "png": "svg/png/logo-on-light-blue-icon@2x.png"},
-          "yellow": {"svg": "svg/logo-on-light-yellow-icon.svg", "png": "svg/png/logo-on-light-yellow-icon@2x.png"}
-        }
+        "onLight": {"svg": "svg/logo-on-light.svg", "png": "svg/png/logo-on-light@2x.png", "use": "Heydru-Black wordmark, for light backgrounds"}
       },
       "vertical": {
         "onDark": {"svg": "svg/lockup-vertical-on-dark.svg", "png": "svg/png/lockup-vertical-on-dark@2x.png", "use": "icon stacked above white wordmark, for dark backgrounds"},
@@ -81,13 +113,12 @@
     }
   },
   "typography": {
-    "source": "Roboto only, per the source brandbook's own TIPOGRAFÍA PRINCIPAL frame",
-    "sourceWeights": ["Light", "Regular", "Bold", "ExtraBold"],
-    "liveWebsitePairing": {
-      "note": "heydru.com currently pairs Poppins (headings) with Roboto (body). This pairing was introduced at website-build time and is not part of the original 2021 brandbook — recorded here as the de facto live choice, not as something verified against the source file.",
-      "display": {"family": "Poppins", "weights": [400, 600, 700, 800]},
-      "body": {"family": "Roboto", "weights": [300, 400, 500], "italic": [400]}
-    },
-    "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Roboto:ital,wght@0,300;0,400;0,500;1,400&display=swap"
+    "adopted": "Poppins 700 (display) + Roboto (body), as heydru.com ships it. The brand standard for digital work.",
+    "display": {"family": "Poppins", "weights": [700], "use": "Headings and step numbers only. Tracking -0.045em (-0.065em on the hero); line height 1.02-1.12, 1.3 for card titles."},
+    "body": {"family": "Roboto", "weights": "100 900 (variable)", "used": [400, 500, 700], "use": "16px / 1.65 body; 500 for uppercase labels; 700 for button labels."},
+    "minimumSize": "12px (0.75rem)",
+    "files": {"display": "https://heydru.com/fonts/poppins-latin-700.woff2", "body": "https://heydru.com/fonts/roboto-latin.woff2"},
+    "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400;500;700&display=swap",
+    "legacy": {"source": "2021 brandbook TIPOGRAFÍA PRINCIPAL frame", "family": "Roboto", "weights": ["Light", "Regular", "Bold", "ExtraBold"]}
   }
 }

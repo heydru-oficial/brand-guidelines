@@ -1,9 +1,13 @@
 # Heydru Brand Guidelines
 
-**[View the style guide →](https://claude.ai/artifact/KzLNjss2QJZVFs2J7JT5oc)**
-— a browsable page with the logo variants, color swatches, and type specimens
-below, instead of reading the raw files. (Published version; may lag the
-latest commit here — this repo is the source of truth.)
+**[View the brand page →](https://heydru.com/brand)** — logos, palette and
+type specimens, browsable.
+
+**Source of truth: heydru.com.** For anything on screen (web, decks, social,
+product), the live website defines the palette, typography and voice. This
+repo records it (see **Web theme**, **Typography** and **Voice** below) and
+keeps the original 2021 brandbook values for print and legacy reference. If
+the two ever disagree, the website wins and this repo gets updated.
 
 Single source of truth for the Heydru brand: logo assets, color palette, and
 typography. Pulled directly from the source Figma file (`final HEYDRU 2021
@@ -40,11 +44,15 @@ grids (both the horizontal lockup one and the vertical lockup one) also
 show the icon in black, blue, and yellow, always with black wordmark text
 where there's a wordmark. Consistent across every form:
 
-| | Isotipo (icon alone) | Horizontal lockup | Vertical lockup |
-|---|---|---|---|
-| Black | `icon-mark-black.svg` | `logo-on-light-black-icon.svg` | `lockup-vertical-on-light-black-icon.svg` |
-| Blue | `icon-mark-blue.svg` | `logo-on-light-blue-icon.svg` | `lockup-vertical-on-light-blue-icon.svg` |
-| Yellow | `icon-mark-yellow.svg` | `logo-on-light-yellow-icon.svg` | `lockup-vertical-on-light-yellow-icon.svg` |
+| | Isotipo (icon alone) | Vertical lockup |
+|---|---|---|
+| Black | `icon-mark-black.svg` | `lockup-vertical-on-light-black-icon.svg` |
+| Blue | `icon-mark-blue.svg` | `lockup-vertical-on-light-blue-icon.svg` |
+| Yellow | `icon-mark-yellow.svg` | `lockup-vertical-on-light-yellow-icon.svg` |
+
+There are no horizontal alternate-color lockups in `svg/`; earlier versions of
+this README listed some that were never added. These alternates are for print
+and illustration. The website uses only the red mark.
 
 These are real alternates shown in the source, not an invented option — use
 red by default, reach for one of these only where context calls for it
@@ -76,7 +84,32 @@ space on **all four sides of the marca gráfica equal to one icon-mark's
 width/height**, measured from the lockup's outer edges. Don't place other
 elements inside that margin.
 
-## Colors
+## Web theme (source: heydru.com)
+
+`tokens/colors.json` → `web` — every color heydru.com uses, per theme. The
+site is **dark-first**: `bg` is `#101014`, not Heydru-Black. Heydru-Black
+(`#393A3E`) is the light theme's text color.
+
+| Token | Dark | Light | Use |
+|---|---|---|---|
+| `bg` | `#101014` | `#FFFFFF` | Page background |
+| `surface` | `#17171B` | `#F5F5F7` | Panels, service cards |
+| `surface-raised` | `#141418` | `#F7F7F9` | Alternating sections, trust strip |
+| `text` | `#F5F5F6` | `#393A3E` | Default text |
+| `muted` | `#B0B0B8` | `#5A5A5A` | Paragraphs |
+| `line` | `#FFFFFF20` | `#393A3E25` | Every hairline and card-grid gutter |
+| `red` | `#F0216C` | `#F0216C` | Primary CTA fill, arrows, accent words. As text on white only at 24px+ (4.09:1) |
+| `red-text` | `#F896B9` | `#B60C4A` | Small red text: numbers, prose links, eyebrows |
+| `on-red` | `#101014` | `#101014` | Text on red — dark, never white |
+| `turquoise` | `#70EBE1` | `#70EBE1` | Architecture Advisory art and hover |
+| `yellow` | `#FFEA2E` | `#FFEA2E` | Drupal AI Engineering art and hover; dark-theme focus ring |
+| `focus` | `#FFEA2E` | `#B60C4A` | 2px focus outline |
+
+The full list (31 tokens, including the secondary text steps and the closing
+band) is in `colors.json`. Red2, orange, lightblue and gray3/4/5 below are not
+used on the web.
+
+## Colors (2021 brandbook)
 
 `tokens/colors.json` — the full palette as named in Figma's Color Styles,
 with hex values read directly from the source file's Color Styles panel
@@ -154,7 +187,7 @@ be confused with the distinct named swatches above (`Heydru-Red2`,
 `tokens/colors.json` → `system.ramps` for the machine-readable version.
 
 Also added, for product-UI needs a 2021 print-oriented brandbook never had to
-cover (already live on heydru.com as `--hd-pink-hover`):
+cover (not used by the current site — see **Web theme** for the reds it does use):
 
 | Token | Value | Use |
 |---|---|---|
@@ -168,7 +201,7 @@ See `tokens/colors.json` → `system` for the machine-readable version.
 
 `applications/` — real, current touchpoints, not stock mockup renders (deliberately skipped the
 mug/t-shirt/stamp mockups from the 2021 deck — generic swag templates don't reflect how this
-brand actually shows up in 2026, and read as padding against the Voice & Tone guidance above).
+brand actually shows up in 2026).
 
 | File | What it is |
 |---|---|
@@ -186,19 +219,37 @@ expected to change again.
 
 ## Typography
 
-**The source brandbook specifies Roboto only** — four named weights (Light,
-Regular, Bold, ExtraBold), no second typeface. See `tokens/typography.md`.
+**Poppins 700 + Roboto** — the adopted pairing, as heydru.com ships it.
 
-The live heydru.com site currently pairs Roboto (body) with **Poppins**
-(headings) — that pairing was introduced later, at website-build time, and
-isn't part of the original 2021 brandbook. Flagging this rather than quietly
-treating Poppins as canonical: if the Poppins pairing is a deliberate,
-kept evolution of the brand, say so here and it becomes the documented
-standard; if not, Roboto-only is what the source actually specifies.
+- **Poppins 700** for headings and step numbers only. Only the 700 weight
+  ships; don't specify others. Tight tracking (−0.045em, −0.065em on the
+  hero), line height 1.02–1.12.
+- **Roboto** (variable 100–900) for everything else: 16px / 1.65 body, 500
+  for uppercase labels, 700 for button labels.
+- **Minimum size: 12px.**
+
+The 2021 brandbook specified Roboto only (Light, Regular, Bold, ExtraBold).
+That is kept in `tokens/typography.md` as legacy reference. Details there.
+
+## Voice
+
+As heydru.com writes it:
+
+- The name is **heydru!** — lowercase with the exclamation mark, even at the
+  start of a sentence.
+- **We** speak to **you/your team**, and name the client's situation in their
+  words: *"No one fully understands our site."*
+- Short, declarative headlines with a turn: *"When Drupal gets difficult, we
+  step in."*, *"You don't always need a bigger team."*
+- Judgment over volume: *"Architecture. Judgment. Control."* No hype, no
+  emoji, no extra exclamation marks.
+- Plain, true figures as proof (*"150+ sites"*, *"15+ years of Drupal"*).
+- The primary action is **Talk to a Drupal Architect ↗**.
 
 ## Updating this repo
 
-If the Figma file changes, re-verify values directly from its Color Styles
-panel and BRANDBOOK frames (don't guess/retype from memory) and update
-`tokens/colors.json` and the relevant SVGs here first, then re-sync into any
-consuming project.
+When heydru.com's styles change (`astro/src/styles/global.css` in
+heydru-oficial/heydru-website), update the `web` block in `tokens/colors.json`
+and the tables above to match, and update `static`/`public/brand/tokens.json`
+on the site. The Figma file is frozen; only logo or print changes would come
+from it.
