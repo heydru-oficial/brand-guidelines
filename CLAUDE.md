@@ -24,8 +24,12 @@ heydru.com CSS (heydru-oficial/heydru-website, astro/src/styles/global.css)
 - **Never hand-edit heydru-website's vendored copy** (`astro/src/brand-system/`,
   `astro/public/brand/svg/`). Change files here; the website's
   `brand-sync.yml` workflow opens a PR there.
-- After a merge here, the website picks it up on its daily sync. To run it
-  now: `gh workflow run brand-sync.yml -R heydru-oficial/heydru-website`.
+- A merge to `main` touching `design-system/` or `svg/` pings
+  heydru-website's `brand-sync.yml` immediately via
+  `.github/workflows/dispatch-brand-sync.yml` (needs the
+  `HEYDRU_WEBSITE_DISPATCH_TOKEN` secret here; falls back to the daily cron
+  if that secret is missing). To run brand-sync by hand instead:
+  `gh workflow run brand-sync.yml -R heydru-oficial/heydru-website`.
 
 ## design-system/
 
