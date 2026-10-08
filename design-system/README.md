@@ -84,4 +84,5 @@ The system is **dark-first**. `dark` is the default theme and `light` is the alt
 - Use **logo-on-dark.svg** (red mark, white wordmark) on `bg`, and **logo-on-light.svg** (red mark, #393A3E wordmark) on white. On the site the logo swaps with the theme.
 - **icon-mark-red.svg** is the favicon and avatar. Use the white mark on red or photographic grounds.
 - **Clear space** is one icon-mark width on all four sides of a lockup.
+- **Size the logo by height, in whole pixels**, and let the width follow (`height: 28px; width: auto`). Sizing it by width gives a fractional height that lands the mark between pixels and softens its edges. On screen: 28px in a header, 32px in a footer, never below 24px. In documents and slides, at least 8mm or 48px tall.
 - Never recolor the mark outside the provided files, redraw it, or set "heydru!" in Poppins as a substitute for the wordmark.
