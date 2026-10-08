@@ -14,6 +14,15 @@ typography. Pulled directly from the source Figma file (`final HEYDRU 2021
 (Copy)`, **BRANDBOOK** page) so every product/site can reuse the same values
 instead of re-deriving them.
 
+## Design system
+
+`design-system/` holds the full heydru! design system: the brand book
+(`README.md`), every token in both themes (`tokens.json`), component specs
+with previews (`components/`) and the font files with their licenses
+(`fonts/`). heydru.com/brand renders its pages from this folder, so a change
+merged here reaches the site through the website's brand-sync workflow. See
+`CLAUDE.md` for how changes flow.
+
 ## Logo system
 
 The source file names three distinct assets — use its own terms, not generic
@@ -44,15 +53,14 @@ grids (both the horizontal lockup one and the vertical lockup one) also
 show the icon in black, blue, and yellow, always with black wordmark text
 where there's a wordmark. Consistent across every form:
 
-| | Isotipo (icon alone) | Vertical lockup |
-|---|---|---|
-| Black | `icon-mark-black.svg` | `lockup-vertical-on-light-black-icon.svg` |
-| Blue | `icon-mark-blue.svg` | `lockup-vertical-on-light-blue-icon.svg` |
-| Yellow | `icon-mark-yellow.svg` | `lockup-vertical-on-light-yellow-icon.svg` |
+| | Isotipo (icon alone) | Horizontal lockup | Vertical lockup |
+|---|---|---|---|
+| Black | `icon-mark-black.svg` | `logo-on-light-black-icon.svg` | `lockup-vertical-on-light-black-icon.svg` |
+| Blue | `icon-mark-blue.svg` | `logo-on-light-blue-icon.svg` | `lockup-vertical-on-light-blue-icon.svg` |
+| Yellow | `icon-mark-yellow.svg` | `logo-on-light-yellow-icon.svg` | `lockup-vertical-on-light-yellow-icon.svg` |
 
-There are no horizontal alternate-color lockups in `svg/`; earlier versions of
-this README listed some that were never added. These alternates are for print
-and illustration. The website uses only the red mark.
+These alternates are for print and illustration. The website UI uses only the
+red mark.
 
 These are real alternates shown in the source, not an invented option — use
 red by default, reach for one of these only where context calls for it

@@ -1,0 +1,50 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+html,body{margin:0;background:var(--bg)}
+.cover{position:relative;width:960px;height:288px;overflow:hidden;background:var(--bg)}
+.cover svg{position:absolute;inset:0}
+.red{fill:var(--red)}
+.ink{fill:var(--text)}
+.yellow{fill:var(--yellow)}
+.turq{fill:var(--turquoise)}
+.dot{fill:var(--red)}
+.cut{fill:var(--bg)}
+.rule{stroke:var(--line);stroke-width:1}
+.name{position:absolute;left:40px;bottom:40px;max-width:440px}
+.name h1{margin:0;font-family:var(--font-display);font-weight:700;font-size:104px;line-height:.95;letter-spacing:-.065em;color:var(--text)}
+.name p{margin:24px 0 0;font-family:var(--font-body);font-size:14px;line-height:1.5;color:var(--muted)}
+</style></head>
+<body>
+<div class="cover">
+<!--
+  blocks: red 320×192 (bleeds top/right), text/ink 96×96, yellow 48×48, turquoise 48×48 — squares sized from section-y-ish steps (48 = heading-gap, 96 = 2×heading-gap).
+  arrangement: one tall red slab bleeding off the top-right with small satellites stacked flush under its left edge, like the site's card grid.
+  pattern: dot grid at process-gap (28px) pitch — the hero's "platform" node grid; "precise, technical" row, chosen because the brand's own hero art is a node grid.
+  scales: process-gap 28px pitch, heading-gap 48px satellites, radius-none on every block, line hairlines (2) for the editorial rules.
+-->
+<svg width="960" height="288" viewBox="0 0 960 288" aria-hidden="true">
+  <rect class="red" x="640" y="0" width="320" height="192"/>
+  <rect class="ink" x="544" y="192" width="96" height="96"/>
+  <rect class="yellow" x="640" y="192" width="48" height="48"/>
+  <rect class="turq" x="688" y="240" width="48" height="48"/>
+  <line class="rule" x1="480" y1="192.5" x2="960" y2="192.5"/>
+  <line class="rule" x1="640.5" y1="0" x2="640.5" y2="288"/>
+  <g>
+    <circle class="dot" cx="508" cy="24" r="2.5"/><circle class="dot" cx="536" cy="24" r="2.5"/><circle class="dot" cx="564" cy="24" r="2.5"/><circle class="dot" cx="592" cy="24" r="2.5"/><circle class="dot" cx="620" cy="24" r="2.5"/>
+    <circle class="dot" cx="508" cy="52" r="2.5"/><circle class="dot" cx="536" cy="52" r="2.5"/><circle class="dot" cx="564" cy="52" r="2.5"/><circle class="dot" cx="592" cy="52" r="2.5"/><circle class="dot" cx="620" cy="52" r="2.5"/>
+    <circle class="dot" cx="508" cy="80" r="2.5"/><circle class="dot" cx="536" cy="80" r="2.5"/><circle class="dot" cx="564" cy="80" r="6"/><circle class="dot" cx="592" cy="80" r="2.5"/><circle class="dot" cx="620" cy="80" r="2.5"/>
+    <circle class="dot" cx="508" cy="108" r="2.5"/><circle class="dot" cx="536" cy="108" r="2.5"/><circle class="dot" cx="564" cy="108" r="2.5"/><circle class="dot" cx="592" cy="108" r="2.5"/><circle class="dot" cx="620" cy="108" r="2.5"/>
+    <circle class="dot" cx="508" cy="136" r="2.5"/><circle class="dot" cx="536" cy="136" r="2.5"/><circle class="dot" cx="564" cy="136" r="2.5"/><circle class="dot" cx="592" cy="136" r="2.5"/><circle class="dot" cx="620" cy="136" r="2.5"/>
+    <circle class="cut" cx="676" cy="24" r="2.5"/><circle class="cut" cx="704" cy="24" r="2.5"/><circle class="cut" cx="732" cy="24" r="2.5"/>
+    <circle class="cut" cx="676" cy="52" r="2.5"/><circle class="cut" cx="704" cy="52" r="2.5"/>
+    <circle class="cut" cx="676" cy="80" r="2.5"/>
+  </g>
+</svg>
+<div class="name">
+  <h1>heydru!</h1>
+  <p>Senior-led Drupal engineering. When Drupal gets difficult, we step in.</p>
+</div>
+</div>
+</body></html>
