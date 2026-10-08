@@ -14,6 +14,15 @@ typography. Pulled directly from the source Figma file (`final HEYDRU 2021
 (Copy)`, **BRANDBOOK** page) so every product/site can reuse the same values
 instead of re-deriving them.
 
+## Design system
+
+`design-system/` holds the full heydru! design system: the brand book
+(`README.md`), every token in both themes (`tokens.json`), component specs
+with previews (`components/`) and the font files with their licenses
+(`fonts/`). heydru.com/brand renders its pages from this folder, so a change
+merged here reaches the site through the website's brand-sync workflow. See
+`CLAUDE.md` for how changes flow.
+
 ## Logo system
 
 The source file names three distinct assets — use its own terms, not generic
