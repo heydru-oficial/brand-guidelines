@@ -1,0 +1,28 @@
+# Pings heydru-website so brand-sync.yml runs right after a brand change
+# merges here, instead of waiting for its daily cron.
+#
+# Needs a repo secret HEYDRU_WEBSITE_DISPATCH_TOKEN: a fine-grained PAT
+# scoped to heydru-oficial/heydru-website with Actions: write and
+# Contents: read. Until that secret exists, this job will fail safely
+# on every push that touches design-system/ or svg/ — it only sends a
+# notification, so a failure here doesn't block anything in this repo.
+name: Notify heydru-website
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'design-system/**'
+      - 'svg/**'
+permissions:
+  contents: read
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send repository_dispatch to heydru-website
+        env:
+          GH_TOKEN: ${{ secrets.HEYDRU_WEBSITE_DISPATCH_TOKEN }}
+        run: |
+          set -euo pipefail
+          gh api repos/heydru-oficial/heydru-website/dispatches \
+            -f event_type=brand-updated
