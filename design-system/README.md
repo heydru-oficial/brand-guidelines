@@ -73,6 +73,8 @@ The system is **dark-first**. `dark` is the default theme and `light` is the alt
 ## Motion and states
 
 - **Hover:** buttons lift 2px and service cards lift 6px. Linked cards fill with `surface-hover`, and article rows slide 12px. Transitions run 0.2–0.25s.
+- **Links never change by color alone.** On hover, every link gains an underline: navigation links turn `text` with a `text`-colored 2px underline; footer, breadcrumb and inline links turn `role-link` with a 1px underline; menu rows also get a light background. Prose links are always underlined and thicken to 2px on hover.
+- **You are here:** the current page's link carries `aria-current="page"` and a solid 2px `red` underline (in a menu, a 2px `red` inset rule on the left and `role-link` text). A section counts as current for every page under it: Insights is current on each article.
 - **Focus:** a 2px solid outline in `focus` (yellow in dark, #b60c4a in light), offset 6px on links and 4px on buttons.
 - **Reduced motion:** honor `prefers-reduced-motion` by removing every animation and transition, and hide the pause control.
 - **Text selection:** `selection-bg` with `selection-text`.
