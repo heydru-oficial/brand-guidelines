@@ -104,3 +104,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--focus);outline-offs
  .button{padding:15px 18px;gap:22px}
 }
 @media (prefers-reduced-motion:reduce){*,:before,:after{transition:none!important;animation:none!important}}
+
+/* Status (role layer) */
+.status{display:inline-flex;align-items:center;gap:8px;font:500 .75rem/1.5 var(--font-body);letter-spacing:.12em;text-transform:uppercase;border:1px solid currentColor;padding:4px 10px;border-radius:var(--radius-none)}
+.status.success{color:var(--status-success)}
+.status.warning{color:var(--status-warning)}
+.status.danger{color:var(--status-danger)}
+.status.info{color:var(--status-info)}
+.chart-key{display:flex;flex-wrap:wrap;gap:16px;margin-top:24px;font:400 .875rem/1.6 var(--font-body);color:var(--role-text-secondary)}
+.chart-key span{display:inline-flex;align-items:center;gap:8px}
+.chart-key i{width:24px;height:4px;display:inline-block}

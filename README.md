@@ -1,27 +1,36 @@
-# Heydru Brand Guidelines
+# heydru! brand guidelines
 
-**[View the brand page →](https://heydru.com/brand)** — logos, palette and
-type specimens, browsable.
+The public brand and design system of **heydru!**, a senior-led Drupal
+engineering boutique. Everything we use to look and sound like ourselves is
+here, in the open: logos, tokens, type, components and the rules behind them.
 
-**Source of truth: heydru.com.** For anything on screen (web, decks, social,
-product), the live website defines the palette, typography and voice. This
-repo records it (see **Web theme**, **Typography** and **Voice** below) and
-keeps the original 2021 brandbook values for print and legacy reference. If
-the two ever disagree, the website wins and this repo gets updated.
+- **[heydru.com/brand](https://heydru.com/brand)**: the guidelines on our site,
+  rendered from this repo.
+- **[Live design system](https://claude.ai/artifact/7egsayPbc5T9UtSy3ondg6)**:
+  the same system with live component previews in both themes.
+- **This repo**: the source files. Merging here updates heydru.com/brand.
 
-Single source of truth for the Heydru brand: logo assets, color palette, and
-typography. Pulled directly from the source Figma file (`final HEYDRU 2021
-(Copy)`, **BRANDBOOK** page) so every product/site can reuse the same values
-instead of re-deriving them.
+**Where values come from.** heydru.com is the reference build: its palette,
+typography and voice are recorded here. The original 2021 brandbook (Figma)
+is kept below for print and legacy reference. If the two disagree, the
+website wins.
 
 ## Design system
 
-`design-system/` holds the full heydru! design system: the brand book
-(`README.md`), every token in both themes (`tokens.json`), component specs
-with previews (`components/`) and the font files with their licenses
-(`fonts/`). heydru.com/brand renders its pages from this folder, so a change
-merged here reaches the site through the website's brand-sync workflow. See
-`CLAUDE.md` for how changes flow.
+`design-system/` is the full system:
+
+- `README.md`: the brand book (voice, color, type, layout, logos).
+- `tokens.json`: every token in dark and light, in two layers. **Roles**
+  (`role-*`, `status-*`, `accent-*`, `chart-*`, the Roles type scale,
+  `space-*`, `format-*`) are what new work uses: decks, documents, social
+  posts, new pages. **Website tokens** record exactly what heydru.com ships;
+  the roles point at them.
+- `components/`: specs and previews for the site's components plus `Status`.
+- `fonts/`: Poppins 700 and Roboto, with their OFL licenses.
+
+heydru.com/brand renders from this folder; a merge here reaches the site
+through the website's brand-sync workflow. `CLAUDE.md` explains how changes
+flow.
 
 ## Logo system
 
